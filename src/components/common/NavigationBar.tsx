@@ -30,15 +30,15 @@ export default function NavigationBar({ lang }: { lang: string }) {
         <div className="flex justify-between items-center py-4">
           {/* Logo 和用户信息 */}
           <div className="flex items-center space-x-4">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
               <img
-                src="/site/images/avatar.jpg"
+                src="/site/images/avatar.webp"
                 alt="Yuning Gu"
                 className="absolute inset-0 w-full h-full object-cover"
               />
             </div>
             <div className="text-left">
-              <h4 className="text-xl font-semibold dark:text-white leading-tight">Yuning Gu</h4>
+              <h4 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight">Yuning Gu</h4>
               <h5 className="text-sm text-gray-600 dark:text-gray-300 leading-tight">谷昱宁</h5>
             </div>
           </div>

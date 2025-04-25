@@ -41,7 +41,7 @@ export default function AboutPage({ params }: { params: { lang: string } }) {
     <div className="flex flex-col items-center text-center">
       <div className="relative w-52 h-52 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg mb-6">
         <img
-          src="/site/images/avatar.jpg"
+          src="/site/images/avatar.webp"
           alt="Yuning Gu Avatar"
           className="object-cover w-full h-full"
         />
