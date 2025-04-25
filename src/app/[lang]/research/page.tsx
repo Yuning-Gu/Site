@@ -84,28 +84,23 @@ export default function ResearchPage({ params }: { params: { lang: string } }) {
   // Render projects based on the new structure
   return (
     <div> 
-      <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white border-b pb-2">
-        {t.title}
-      </h1>
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-2">{t.title}</h1>
       
-      <div className="space-y-12"> {/* Spacing between projects */} 
+      <div className="space-y-8">
         {t.projects.map((project, index) => (
-          // Project card
-          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
-              {project.title}
-            </h2>
-            {/* Render project details */} 
+          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-5">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">{project.title}</h2>
+            
             {project.details.map((detail, i) => (
-               <p key={`detail-${i}`} className="text-gray-700 dark:text-gray-300 mb-2 leading-relaxed">{detail}</p>
+               <p key={`detail-${i}`} className="text-gray-700 dark:text-gray-300 mb-2 leading-relaxed text-sm">{detail}</p>
             ))}
-            {/* Render publications if they exist */} 
+             
             {project.publications && project.publications.length > 0 && (
-              <div className="mt-4">
-                <h3 className="text-md font-semibold text-gray-800 dark:text-gray-200 mb-1">
+              <div className="mt-3">
+                <h3 className="text-base font-medium text-gray-800 dark:text-gray-200 mb-1">
                   {params.lang === 'zh' ? '研究成果发表于：' : 'Research outcomes were published in:'}
                 </h3>
-                <ul className="list-disc list-inside space-y-1">
+                <ul className="list-disc list-inside space-y-1 text-sm">
                   {project.publications.map((pub, i) => (
                     <li key={`pub-${i}`} className="text-gray-700 dark:text-gray-300">
                       {pub.text} DOI: <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline dark:text-blue-400">{pub.doi}</a>

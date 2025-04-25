@@ -96,35 +96,31 @@ export default function ContactPage({ params }: { params: { lang: string } }) {
   const t = content[params.lang as keyof typeof content] || content.en;
 
   return (
-    <div className="space-y-8">
-      <h1 className="text-3xl font-bold">{t.title}</h1>
+    <div className="space-y-6">
+      <h1 className="text-2xl font-bold border-b pb-2 mb-4">{t.title}</h1>
       
       {/* Message */}
-      <p className="text-lg text-gray-600">
-        {t.message}
-      </p>
+      <p className="text-base text-gray-700 dark:text-gray-300">{t.message}</p>
 
       {/* Contact Sections */}
       {Object.entries(t.sections).map(([key, section]) => (
-        <section key={key} className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
-            {section.title}
-          </h2>
-          <div className="space-y-3">
+        <section key={key} className="space-y-3">
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">{section.title}</h2>
+          <div className="space-y-2">
             {section.items.map((item, index) => (
-              <div key={index} className="flex items-center gap-4">
-                <span className="font-medium min-w-[100px]">{item.label}:</span>
+              <div key={index} className="flex items-center gap-3 text-sm">
+                <span className="font-medium min-w-[90px]">{item.label}:</span>
                 {item.link ? (
                   <a
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-blue-600 hover:underline"
+                    className="text-blue-600 hover:underline dark:text-blue-400 break-all"
                   >
                     {item.value}
                   </a>
                 ) : (
-                  <span className="text-gray-600">{item.value}</span>
+                  <span className="text-gray-600 dark:text-gray-300">{item.value}</span>
                 )}
               </div>
             ))}

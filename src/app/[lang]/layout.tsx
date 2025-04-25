@@ -45,8 +45,8 @@ export default function LangLayout({
         <NavigationBar lang={params.lang} />
       </ClientOnlyWrapper>
       {/* 调整 margin-top 以获得合适的间距 */}
-      <main className="mt-36 p-4 md:p-6 lg:p-8">
-        <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-lg p-6 md:p-8 max-w-6xl mx-auto">
+      <main className="mt-28 p-4 md:p-6 lg:p-8">
+        <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-lg p-5 md:p-7 max-w-6xl mx-auto">
           {children}
         </div>
       </main>

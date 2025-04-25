@@ -97,14 +97,10 @@ export default function PublicationsPage({ params }: { params: { lang: string } 
 
   // Helper function to render a publication item
   const renderPublication = (item: any, type: 'journal' | 'conference') => (
-    <div key={item.doi || item.title} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6 space-y-2 shadow">
-      <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-        {item.title}
-      </h3>
-      <p className="text-gray-600 dark:text-gray-300 text-base">
-        {item.authors}
-      </p>
-      <div className="flex flex-wrap gap-x-4 gap-y-1 text-base text-gray-500 dark:text-gray-400">
+    <div key={item.doi || item.title} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-5 space-y-1 shadow">
+      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h3>
+      <p className="text-gray-600 dark:text-gray-300 text-sm">{item.authors}</p>
+      <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm text-gray-500 dark:text-gray-400">
         {type === 'journal' ? (
           <> 
             <span>{item.journal},</span>
@@ -119,49 +115,41 @@ export default function PublicationsPage({ params }: { params: { lang: string } 
           </>
         )}
       </div>
-      <div className="flex flex-wrap gap-4 items-center text-base">
+      <div className="flex flex-wrap gap-3 items-center text-sm">
         {item.doi && (
           <a href={`https://doi.org/${item.doi}`} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline dark:text-blue-400">
             DOI: {item.doi}
           </a>
         )}
         {item.status && (
-          <span className={`px-2.5 py-1 rounded-full text-sm font-medium ${item.status === 'Published' || item.status === '已发表' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'}`}>
+          <span className={`px-2 py-0.5 rounded-full text-xs font-medium ${item.status === 'Published' || item.status === '已发表' ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300' : 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-300'}`}>
             {item.status}
           </span>
         )}
       </div>
-      <p className="text-gray-700 dark:text-gray-300 pt-2 text-base italic">
+      <p className="text-gray-700 dark:text-gray-300 pt-1 text-sm italic">
         {item.abstract}
       </p>
     </div>
   );
 
   return (
-    <div> {/* Keep the outer div for structure */} 
-      <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white border-b pb-2">
-        {t.title}
-      </h1>
+    <div>
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-2">{t.title}</h1>
       
-      {/* Journal Articles Section */}
       {t.journalArticles && t.journalArticles.length > 0 && (
-        <section className="space-y-4 mb-12">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
-            {t.journalTitle}
-          </h2>
-          <div className="space-y-6">
+        <section className="space-y-3 mb-8">
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{t.journalTitle}</h2>
+          <div className="space-y-4">
             {t.journalArticles.map(paper => renderPublication(paper, 'journal'))}
           </div>
         </section>
       )}
 
-      {/* Conference Papers Section */}
       {t.conferencePapers && t.conferencePapers.length > 0 && (
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold text-gray-800 dark:text-gray-200">
-            {t.conferenceTitle}
-          </h2>
-          <div className="space-y-6">
+        <section className="space-y-3">
+          <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200">{t.conferenceTitle}</h2>
+          <div className="space-y-4">
             {t.conferencePapers.map(paper => renderPublication(paper, 'conference'))}
           </div>
         </section>

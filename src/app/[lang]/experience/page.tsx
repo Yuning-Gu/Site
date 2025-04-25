@@ -81,23 +81,23 @@ export default function ExperiencePage({ params }: { params: { lang: string } })
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white border-b pb-2">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-2">
         {t.title}
       </h1>
       
-      <div className="space-y-8">
+      <div className="space-y-6">
         {t.experiences.map((exp, index) => (
-          <div key={index} className="bg-white/80 dark:bg-gray-800/80 p-6 rounded-lg shadow-md">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+          <div key={index} className="bg-white/80 dark:bg-gray-800/80 p-5 rounded-lg shadow-md">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
               {exp.title}
             </h3>
-            <p className="text-lg text-blue-600 dark:text-blue-400">
+            <p className="text-base text-blue-600 dark:text-blue-400">
               {exp.organization}
             </p>
-            <p className="text-sm text-gray-600 dark:text-gray-400 mb-2">
+            <p className="text-xs text-gray-600 dark:text-gray-400 mb-2">
               {exp.period}
             </p>
-            <ul className="list-disc list-inside space-y-1">
+            <ul className="list-disc list-inside space-y-1 text-sm">
               {exp.description.map((item, i) => (
                 <li key={i} className="text-gray-700 dark:text-gray-300">
                   {item}

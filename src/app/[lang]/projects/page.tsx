@@ -81,41 +81,41 @@ export default function ProjectsPage({ params }: { params: { lang: string } }) {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white border-b pb-2">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-2">
         {t.title}
       </h1>
       
-      <div className="space-y-8">
+      <div className="space-y-6">
         {t.projects.map((project, index) => (
-          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-              <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-5">
+            <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-3">
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">
                 {project.title}
               </h2>
-              <div className="text-sm text-gray-600 dark:text-gray-400 mt-1 md:mt-0">
+              <div className="text-xs text-gray-600 dark:text-gray-400 mt-1 md:mt-0">
                 {project.period}
               </div>
             </div>
             
-            <div className="text-blue-600 dark:text-blue-400 mb-4">
+            <div className="text-blue-600 dark:text-blue-400 mb-3 text-sm">
               {project.role}
             </div>
             
-            <p className="text-gray-700 dark:text-gray-300 mb-4">
+            <p className="text-gray-700 dark:text-gray-300 mb-3 text-sm">
               {project.description}
             </p>
             
             <div className="pl-4 border-l-4 border-blue-500">
-              <h3 className="text-lg font-medium text-gray-900 dark:text-white mb-2">
+              <h3 className="text-base font-medium text-gray-900 dark:text-white mb-2">
                 {params.lang === 'zh' ? '主要成果：' : 'Key Achievements:'}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-1.5 text-sm">
                 {project.highlights.map((highlight, i) => (
                   <li 
                     key={i} 
                     className="text-gray-700 dark:text-gray-300 flex items-start"
                   >
-                    <span className="mr-2 text-blue-500">•</span>
+                    <span className="mr-2 text-blue-500 text-xs">•</span>
                     {highlight}
                   </li>
                 ))}

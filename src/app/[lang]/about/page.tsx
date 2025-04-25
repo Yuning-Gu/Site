@@ -1,7 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { isValidLocale } from '@/lib/i18n/config';
-import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'About Me | Yuning Gu',
@@ -41,21 +40,19 @@ export default function AboutPage({ params }: { params: { lang: string } }) {
   return (
     <div className="flex flex-col items-center text-center">
       <div className="relative w-52 h-52 rounded-full overflow-hidden border-4 border-white dark:border-gray-700 shadow-lg mb-6">
-        <Image
-          src="/images/avatar.jpg"
+        <img
+          src="/site/images/avatar.jpg"
           alt="Yuning Gu Avatar"
-          fill
-          className="object-cover"
-          priority
+          className="object-cover w-full h-full"
         />
       </div>
 
-      <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{t.name_en}</h2>
-      <h3 className="text-xl text-gray-600 dark:text-gray-400 mb-8">{t.name_zh}</h3>
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{t.name_en}</h2>
+      <h3 className="text-lg text-gray-600 dark:text-gray-400 mb-6">{t.name_zh}</h3>
 
       <div className="max-w-4xl text-left">
         {t.paragraphs.map((paragraph, index) => (
-          <p key={index} className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">
+          <p key={index} className="text-gray-700 dark:text-gray-300 mb-3 leading-relaxed text-sm">
             {paragraph}
           </p>
         ))}

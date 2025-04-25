@@ -111,23 +111,23 @@ export default function SkillsPage({ params }: { params: { lang: string } }) {
 
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white border-b pb-2">
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-2">
         {t.title}
       </h1>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {t.categories.map((category, index) => (
-          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+          <div key={index} className="bg-gray-50 dark:bg-gray-700 rounded-lg p-5">
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
               {category.name}
             </h3>
-            <ul className="space-y-2">
+            <ul className="space-y-1.5 text-sm">
               {category.skills.map((skill, i) => (
                 <li 
                   key={i} 
                   className="flex items-center text-gray-700 dark:text-gray-300"
                 >
-                  <span className="mr-2">•</span>
+                  <span className="mr-2 text-xs">•</span>
                   {skill}
                 </li>
               ))}
