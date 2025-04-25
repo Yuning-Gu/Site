@@ -27,9 +27,9 @@ export default function NavigationBar({ lang }: { lang: string }) {
   return (
     <div className="fixed top-0 left-0 right-0 bg-white/90 dark:bg-gray-900/90 shadow-lg backdrop-blur-sm z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex justify-between items-center py-3">
           {/* Logo 和用户信息 */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-3">
             <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
               <img
                 src="/site/images/avatar.webp"
@@ -38,8 +38,8 @@ export default function NavigationBar({ lang }: { lang: string }) {
               />
             </div>
             <div className="text-left">
-              <h4 className="text-xl font-semibold text-gray-900 dark:text-white leading-tight">Yuning Gu</h4>
-              <h5 className="text-sm text-gray-600 dark:text-gray-300 leading-tight">谷昱宁</h5>
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-white leading-tight">Yuning Gu</h4>
+              <h5 className="text-xs text-gray-600 dark:text-gray-300 leading-tight">谷昱宁</h5>
             </div>
           </div>
 
@@ -69,12 +69,12 @@ export default function NavigationBar({ lang }: { lang: string }) {
           </div>
 
           {/* 桌面导航 */}
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={`/${lang}${item.href}`}
-                className={`px-2 py-1 rounded transition-colors ${
+                className={`text-sm px-2 py-1 rounded transition-colors ${
                   pathname === `/${lang}${item.href}`
                     ? 'text-blue-600 font-medium'
                     : 'text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400'
@@ -86,12 +86,12 @@ export default function NavigationBar({ lang }: { lang: string }) {
           </nav>
 
           {/* 语言切换 */}
-          <div className="hidden md:flex space-x-2">
+          <div className="hidden md:flex space-x-1.5">
             {languages.map((language) => (
               <Link
                 key={language.code}
                 href={`/${language.code}${pathname.substring(3) || ''}`}
-                className={`px-2 py-1 rounded ${
+                className={`text-xs px-2 py-0.5 rounded ${
                   lang === language.code
                     ? 'bg-blue-500 text-white'
                     : 'text-gray-600 dark:text-gray-300'

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidLocale } from '@/lib/i18n/config';
+import { isValidLocale, Locale } from '@/lib/i18n/config';
 
 export const metadata: Metadata = {
   title: 'Education | Yuning Gu',
@@ -118,7 +118,7 @@ const content = {
   }
 };
 
-export default function EducationPage({ params }: { params: { lang: string } }) {
+export default function EducationPage({ params }: { params: { lang: Locale } }) {
   if (!isValidLocale(params.lang)) {
     notFound();
   }
@@ -127,22 +127,14 @@ export default function EducationPage({ params }: { params: { lang: string } }) 
 
   return (
     <div>
-      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-2">
-        {t.title}
-      </h1>
+      <h1 className="text-2xl font-bold mb-6 text-gray-900 dark:text-white border-b pb-2">{t.title}</h1>
       
       <div className="space-y-6">
         {t.education.map((edu, index) => (
           <div key={index} className="bg-white/80 dark:bg-gray-800/80 p-5 rounded-lg shadow-md">
-            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">
-              {edu.degree}
-            </h2>
-            <p className="text-base text-blue-600 dark:text-blue-400 font-medium mb-1">
-              {edu.school}
-            </p>
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
-              {edu.period}
-            </p>
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{edu.degree}</h2>
+            <p className="text-base text-blue-600 dark:text-blue-400 font-medium mb-1">{edu.school}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">{edu.period}</p>
             <ul className="list-disc list-inside space-y-1 text-gray-700 dark:text-gray-300 text-sm">
               {edu.details.map((detail, i) => (
                 <li key={i}>{detail.trim()}</li>

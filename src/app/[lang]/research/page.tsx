@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidLocale } from '@/lib/i18n/config';
+import { isValidLocale, Locale } from '@/lib/i18n/config';
 
 export const metadata: Metadata = {
   title: 'Research | Yuning Gu',
@@ -74,7 +74,7 @@ const content = {
   }
 };
 
-export default function ResearchPage({ params }: { params: { lang: string } }) {
+export default function ResearchPage({ params }: { params: { lang: Locale } }) {
   if (!isValidLocale(params.lang)) {
     notFound();
   }
@@ -97,9 +97,7 @@ export default function ResearchPage({ params }: { params: { lang: string } }) {
              
             {project.publications && project.publications.length > 0 && (
               <div className="mt-3">
-                <h3 className="text-base font-medium text-gray-800 dark:text-gray-200 mb-1">
-                  {params.lang === 'zh' ? '研究成果发表于：' : 'Research outcomes were published in:'}
-                </h3>
+                <h3 className="text-base font-medium text-gray-800 dark:text-gray-200 mb-1">{params.lang === 'zh' ? '研究成果发表于：' : 'Research outcomes were published in:'}</h3>
                 <ul className="list-disc list-inside space-y-1 text-sm">
                   {project.publications.map((pub, i) => (
                     <li key={`pub-${i}`} className="text-gray-700 dark:text-gray-300">

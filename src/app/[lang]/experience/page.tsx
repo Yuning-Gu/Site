@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidLocale } from '@/lib/i18n/config';
+import { isValidLocale, Locale } from '@/lib/i18n/config';
 
 export const metadata: Metadata = {
   title: 'Experience | Yuning Gu',
@@ -72,7 +72,7 @@ const content = {
   }
 };
 
-export default function ExperiencePage({ params }: { params: { lang: string } }) {
+export default function ExperiencePage({ params }: { params: { lang: Locale } }) {
   if (!isValidLocale(params.lang)) {
     notFound();
   }

@@ -31,7 +31,7 @@ export default function LangLayout({
   params,
 }: {
   children: React.ReactNode
-  params: { lang: string }
+  params: { lang: Locale }
 }) {
   if (!isValidLocale(params.lang)) {
     notFound()

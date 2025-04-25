@@ -50,6 +50,18 @@ export default function AboutPage({ params }: { params: { lang: string } }) {
       <h2 className="text-2xl font-bold text-gray-900 dark:text-white">{t.name_en}</h2>
       <h3 className="text-lg text-gray-600 dark:text-gray-400 mb-6">{t.name_zh}</h3>
 
+      <div className="mb-8">
+        <a 
+          href="/site/images/Gu_Yuning_CV.pdf"
+          download="Gu_Yuning_CV.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+        >
+          {params.lang === 'zh' ? '下载简历 (PDF)' : 'Download CV (PDF)'}
+        </a>
+      </div>
+
       <div className="max-w-4xl text-left">
         {t.paragraphs.map((paragraph, index) => (
           <p key={index} className="text-gray-700 dark:text-gray-300 mb-3 leading-relaxed text-sm">

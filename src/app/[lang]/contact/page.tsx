@@ -79,13 +79,11 @@ export default function ContactPage({ params }: { params: { lang: Locale } }) {
         {t.intro}
       </p>
 
-      {/* Academic Contact Section */}
       <section className="mb-10">
         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
           {t.academicTitle}
         </h2>
         <div className="space-y-2.5 text-sm">
-          {/* Email */}
           <div className="flex flex-col sm:flex-row sm:items-center">
             <span className="font-medium text-gray-900 dark:text-white min-w-[100px] sm:text-right mr-3 mb-1 sm:mb-0">{t.emailLabel}:</span>
             <div className="flex flex-col space-y-1">
@@ -96,7 +94,6 @@ export default function ContactPage({ params }: { params: { lang: Locale } }) {
               ))}
             </div>
           </div>
-          {/* Phone */}
           <div className="flex flex-col sm:flex-row sm:items-center">
             <span className="font-medium text-gray-900 dark:text-white min-w-[100px] sm:text-right mr-3 mb-1 sm:mb-0">{t.phoneLabel}:</span>
             <div className="flex flex-col space-y-1">
@@ -107,17 +104,14 @@ export default function ContactPage({ params }: { params: { lang: Locale } }) {
               ))}
             </div>
           </div>
-          {/* Affiliation */}
           <div className="flex flex-col sm:flex-row sm:items-start">
             <span className="font-medium text-gray-900 dark:text-white min-w-[100px] sm:text-right mr-3 mb-1 sm:mb-0">{t.affiliationLabel}:</span>
             <span className="text-gray-700 dark:text-gray-300">{t.affiliation}</span>
           </div>
-          {/* School */}
           <div className="flex flex-col sm:flex-row sm:items-start">
             <span className="font-medium text-gray-900 dark:text-white min-w-[100px] sm:text-right mr-3 mb-1 sm:mb-0">{t.schoolLabel}:</span>
             <span className="text-gray-700 dark:text-gray-300">{t.school}</span>
           </div>
-          {/* Department */}
           <div className="flex flex-col sm:flex-row sm:items-start">
             <span className="font-medium text-gray-900 dark:text-white min-w-[100px] sm:text-right mr-3 mb-1 sm:mb-0">{t.departmentLabel}:</span>
             <span className="text-gray-700 dark:text-gray-300">{t.department}</span>
@@ -125,7 +119,6 @@ export default function ContactPage({ params }: { params: { lang: Locale } }) {
         </div>
       </section>
 
-      {/* Academic Profiles Section */}
       <section>
         <h2 className="text-xl font-semibold text-gray-800 dark:text-gray-200 mb-2">
           {t.profilesTitle}

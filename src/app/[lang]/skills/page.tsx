@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { isValidLocale } from '@/lib/i18n/config';
+import { isValidLocale, Locale } from '@/lib/i18n/config';
 
 export const metadata: Metadata = {
   title: 'Skills | Yuning Gu',
@@ -102,7 +102,7 @@ const content = {
   }
 };
 
-export default function SkillsPage({ params }: { params: { lang: string } }) {
+export default function SkillsPage({ params }: { params: { lang: Locale } }) {
   if (!isValidLocale(params.lang)) {
     notFound();
   }
