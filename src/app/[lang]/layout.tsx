@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import '../globals.css'
-import { isValidLocale } from '@/lib/i18n/config'
+import { locales, isValidLocale, Locale } from '@/lib/i18n/config'
 import { notFound } from 'next/navigation'
 // import dynamic from 'next/dynamic' // 不再需要
 import NavigationBar from '@/components/common/NavigationBar' // 恢复路径别名
@@ -12,6 +12,13 @@ import ClientOnlyWrapper from '@/components/common/ClientOnlyWrapper' // 导入�
 // })
 
 const inter = Inter({ subsets: ['latin'] })
+
+// Function to generate static paths for supported locales
+export async function generateStaticParams() {
+  return locales.map((locale: Locale) => ({
+    lang: locale,
+  }));
+}
 
 // Metadata can still be defined here if needed for specific language routes
 // export const metadata: Metadata = { ... }
