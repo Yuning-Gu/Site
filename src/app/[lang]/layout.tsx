@@ -11,6 +11,9 @@ import ClientOnlyWrapper from '@/components/common/ClientOnlyWrapper' // 导入�
 //   ssr: false,
 // })
 
+// Force static generation for this segment
+export const dynamic = 'force-static';
+
 const inter = Inter({ subsets: ['latin'] })
 
 // Function to generate static paths for supported locales
