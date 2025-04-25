@@ -34,7 +34,7 @@ export default function NavigationBar({ lang }: { lang: string }) {
               <img
                 src="/site/images/avatar.jpg"
                 alt="Yuning Gu"
-                className="object-cover w-full h-full"
+                className="object-cover"
               />
             </div>
             <div className="text-left">
