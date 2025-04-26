@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} text-lg bg-gray-50 dark:bg-gray-900 transition-colors min-h-screen bg-[url('/images/background.jpg')] bg-cover bg-center bg-fixed`}>
+      <body className={`${inter.className} text-lg transition-colors min-h-screen`}>
         <ClientOnlyWrapper>
           <ThemeToggle />
         </ClientOnlyWrapper>
