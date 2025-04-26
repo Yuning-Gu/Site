@@ -18,17 +18,17 @@
 
 /* Apply background directly to html element */
 html {
-  height: 100%; /* Ensure html takes full height */
-  background-color: #374151; /* Fallback color */
-  background: url('/site/images/bg1.webp') no-repeat center center;
-  background-size: cover;
-  /* background-attachment: fixed; will be added via media query */
+  /* Removed height and background styles */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  min-height: 100%; /* Occupy full height of html */
-  /* position: relative; /* Likely not needed anymore */
+  min-height: 100vh; /* Use viewport height */
+  /* Apply background styles directly to body */
+  background-color: #374151; /* Fallback color */
+  background: url('/site/images/bg1.webp') no-repeat center center;
+  background-size: cover;
+  /* Ensure no fixed attachment */
 }
 
 /* Remove the body::before rule entirely */
@@ -48,11 +48,13 @@ body::before {
 */
 
 /* Re-apply fixed background attachment to html for desktop */
+/* 
 @media (min-width: 768px) { 
   html {
     background-attachment: fixed;
   }
 }
+*/
 
 .content-wrapper {
   position: relative;
