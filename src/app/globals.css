@@ -18,12 +18,12 @@
 
 /* Apply background directly to html element */
 html {
-  /* Removed height and background styles */
+  height: 100%; /* Restore html height */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  min-height: 100vh; /* Use viewport height */
+  min-height: 100vh; /* Keep body min-height */
   /* Apply background styles directly to body */
   background-color: #374151; /* Fallback color */
   background: url('/site/images/bg1.webp') no-repeat center center;
