@@ -28,11 +28,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.className} text-lg transition-colors min-h-screen`}>
+      <body className={`${inter.className} text-lg transition-colors min-h-screen flex flex-col`}>
         <ClientOnlyWrapper>
           <ThemeToggle />
         </ClientOnlyWrapper>
-        <div className="container mx-auto">
+        <div className="container mx-auto flex-grow">
           {children}
         </div>
       </body>
