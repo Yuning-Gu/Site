@@ -37,15 +37,12 @@ export default function LangLayout({
     notFound()
   }
 
-  // 返回布局结构，不包含 <html> 或 <body>
   return (
-    <div className="relative">
-      {/* 使用包装器确保 NavigationBar 只在客户端渲染 */}
+    <div className="relative flex flex-col flex-grow">
       <ClientOnlyWrapper>
         <NavigationBar lang={params.lang} />
       </ClientOnlyWrapper>
-      {/* 调整 margin-top 以获得合适的间距 */}
-      <main className="mt-28 p-4 md:p-6 lg:p-8">
+      <main className="mt-28 p-4 md:p-6 lg:p-8 flex-grow">
         <div className="bg-white/70 dark:bg-gray-800/70 backdrop-blur-sm rounded-xl shadow-lg p-5 md:p-7 max-w-6xl mx-auto">
           {children}
         </div>
