@@ -39,7 +39,7 @@ export default function LangLayout({
 
   // 返回布局结构，不包含 <html> 或 <body>
   return (
-    <div className="min-h-screen relative">
+    <div className="relative">
       {/* 使用包装器确保 NavigationBar 只在客户端渲染 */}
       <ClientOnlyWrapper>
         <NavigationBar lang={params.lang} />
